@@ -3,16 +3,34 @@ package lineales;
 import modelos.I_ListaConUltimo;
 
 public class LEGConUltimo<E> extends LEGGenerica<E> implements I_ListaConUltimo<E> {
-    protected LEGConUltimo<E> ultimo;
+    protected NodoLEG<E> ultimo;
     public LEGConUltimo(){
         super();
         ultimo = null;
     }
-    public void insertar(E x) {
-        super.insertar(x);
-    }
-    public void insertarFinal(E elemento) {
+    public NodoLEG<E> getUltimo(){return ultimo;}
+    public NodoLEG<E> getPrimero(){return primero;}
+    public void insertar(NodoLEG<E> x) {
+        if(primero==null){
+            primero = x;
+            ultimo = x;
 
+        }
+        else{
+            super.insertar(x);
+        }
+
+    }
+    public void insertarFinal(NodoLEG<E> x) {
+        if(primero==null){
+            primero = x;
+            ultimo = x;
+
+        }
+        else{
+            ultimo.siguiente = x;
+            ultimo = x;
+        }
     }
 
     public String toString() {
@@ -24,7 +42,8 @@ public class LEGConUltimo<E> extends LEGGenerica<E> implements I_ListaConUltimo<
     }
 
     public E recuperar(int i) {
-        return null;
+         E dato = super.recuperar(i);
+         return dato;
     }
     public static String listadoDirectoIter(){
         String res = "";
@@ -38,32 +57,11 @@ public class LEGConUltimo<E> extends LEGGenerica<E> implements I_ListaConUltimo<
         }
         return res;
     }
-    public String toStringIterativo(){
-        String res = "";
-        NodoLEG<E> aux = primero;
-        while (!aux.equals(ultimo)){
-            res += aux.dato.toString() + "\n";
-            aux = aux.siguiente;
-        }
-        return res;
-    }
-    public String toStringInversoIterativo(){
-        String res = "";
-        NodoLEG<E> aux = primero, ant = null, temp = null;
-        while (!aux.equals(ultimo)){
-            temp = aux.siguiente;
-            aux.siguiente = ant;
-            ant = aux;
-            aux = temp;
-            res += ant.getDato().toString() + "\n";
-        }
-        return res;
-    }
     public String toStringRecursivo(NodoLEG<E> aux){
         String res="";
+        res = aux.dato.toString();
         if(!aux.equals(ultimo)){
-            res = aux.dato.toString();
-            res = res + toStringRecursivo(aux.siguiente) + "\n";
+            res = res + " " + toStringRecursivo(aux.siguiente) + "\n";
         }
         return res;
     }
@@ -72,7 +70,7 @@ public class LEGConUltimo<E> extends LEGGenerica<E> implements I_ListaConUltimo<
         String res="";
         if(!aux.equals(ultimo)){
             res = aux.dato.toString();
-            res =  toStringRecursivo(aux.siguiente) + res + "\n";
+            res =  toStringRecursivo(aux.siguiente) + " " + res + "\n";
         }
         return res;
     }

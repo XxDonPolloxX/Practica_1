@@ -8,7 +8,9 @@ public class Main {
         LEGConUltimo<E> leg = new LEGConUltimo<E>();
         leg.insertar(new NodoLEG<E>(new E(2)));
         leg.insertar(new NodoLEG<E>(new E(3)));
+        leg.insertarFinal(new NodoLEG<E>(new E(9)));
         System.out.println(leg.getPrimero().getDato().toString());
+        System.out.println(leg.toStringRecursivo(leg.getPrimero()));
         System.out.println(leg.toStringInversoRecursivo(leg.getPrimero()));
     }
 }
