@@ -1,5 +1,7 @@
 package lineales;
 
-public class LEGConUltimo<E> {
+import modelos.I_ListaConUltimo;
+
+public class LEGConUltimo<E> implements I_ListaConUltimo {
 
 }

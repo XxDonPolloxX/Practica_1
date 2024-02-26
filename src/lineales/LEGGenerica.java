@@ -1,5 +1,7 @@
 package lineales;
 
+import modelos.I_ListaConUltimo;
+
 public class LEGGenerica <E>{
     protected NodoLEG<E> primero;
 
@@ -7,8 +9,8 @@ public class LEGGenerica <E>{
         primero = null;
     }
 
-    public void insertar(E x){
-        NodoLEG<E> nuevo = new NodoLEG<>(x);
+    public void insertar(NodoLEG<E> x){
+        NodoLEG<E> nuevo = new NodoLEG<E>(x);
         nuevo.siguiente = primero;
         primero = nuevo;
     }
@@ -28,7 +30,7 @@ public class LEGGenerica <E>{
     }
     public String toString(){
         String res = "";
-        for (NodoLEG<E> aux = primero;null != aux; aux = aux.siguiente){
+        for (NodoLEG<E> aux = primero; null != aux; aux = aux.siguiente){
             res += aux.getDato().toString() + "\n";
         }
         return res;
