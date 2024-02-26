@@ -1,4 +1,5 @@
 package lineales;
 
-public class LEGConUltimo {
+public class LEGConUltimo<E> {
+
 }
