@@ -1,8 +1,8 @@
 package lineales;
 
 public class NodoLEG <E>{
-    E dato;
-    NodoLEG<E> siguiente;
+    protected E dato;
+    protected NodoLEG<E> siguiente;
 
     public NodoLEG(E dato){
         this(dato, null);
@@ -12,4 +12,6 @@ public class NodoLEG <E>{
         this.dato = dato;
         this.siguiente = siguiente;
     }
+    public E getDato(){return dato;}
+
 }

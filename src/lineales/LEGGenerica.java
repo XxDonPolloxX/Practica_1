@@ -29,7 +29,7 @@ public class LEGGenerica <E>{
     public String toString(){
         String res = "";
         for (NodoLEG<E> aux = primero;null != aux; aux = aux.siguiente){
-            res += aux.dato.toString() + "\n";
+            res += aux.getDato().toString() + "\n";
         }
         return res;
     }
@@ -39,7 +39,7 @@ public class LEGGenerica <E>{
         if (aux == null){
             System.out.println("Lista vacia");
         }else {
-            while (!aux.dato.equals(x)){
+            while (!aux.getDato().equals(x)){
                 ant = aux; aux = aux.siguiente;
             }
             if (aux != null){
