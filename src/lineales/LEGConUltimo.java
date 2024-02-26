@@ -28,15 +28,25 @@ public class LEGConUltimo<E> extends LEGGenerica<E> implements I_ListaConUltimo<
     }
     public static String listadoDirectoIter(){
         String res = "";
-
         return res;
     }
 
-    public static String listadoDirectoRec(){
+    public  String listadoDirectoRec(){
         String res = "";
         for(NodoLEG<E> aux = primero; aux != null;){
 
         }
         return res;
+    }
+    public String toStringRecursivo(NodoLEG<E> aux){
+        String res="";
+        if(!aux.equals(ultimo)){
+            res = res + toStringRecursivo(aux.siguiente) + "\n";
+        }
+        return res;
+    }
+
+    public String toStringInversoRecursivo(NodoLEG<E> aux, NodoLEG<E> ant){
+            
     }
 }
