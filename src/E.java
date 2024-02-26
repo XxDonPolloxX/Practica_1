@@ -7,4 +7,7 @@ public class E {
     public String toString(){
         return java.lang.Integer.toString(numero);
     }
+    public int compareTo(E elemento){
+        return this.numero - elemento.getNumero();
+    }
 }
