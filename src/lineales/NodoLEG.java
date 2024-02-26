@@ -4,7 +4,7 @@ public class NodoLEG <E>{
     E dato;
     NodoLEG<E> siguiente;
 
-    NodoLEG(E dato){
+    public NodoLEG(E dato){
         this(dato, null);
     }
 
