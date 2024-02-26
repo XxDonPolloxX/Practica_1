@@ -45,12 +45,11 @@ public class LEGConUltimo<E> extends LEGGenerica<E> implements I_ListaConUltimo<
     }
 
     public boolean eliminar(E elemento) {
-        return false;
+        return super.eliminar(elemento);
     }
 
     public E recuperar(int i) {
-        E dato = super.recuperar(i);
-        return dato;
+        return super.recuperar(i);
     }
 
     public String toStringIterativo() {
@@ -80,16 +79,16 @@ public class LEGConUltimo<E> extends LEGGenerica<E> implements I_ListaConUltimo<
         String res = "";
         res = aux.dato.toString();
         if (!aux.equals(ultimo)) {
-            res = res + " " + toStringRecursivo(aux.siguiente) + "\n";
+            res = res + " " + toStringRecursivo(aux.siguiente);
         }
         return res;
     }
 
     public String toStringInversoRecursivo(NodoLEG<E> aux) {
-        String res = "", saux;
+        String res = "";
+        res = aux.dato.toString();
         if (!aux.equals(ultimo)) {
-            saux = aux.dato.toString();
-            res = toStringRecursivo(aux.siguiente) + " " + saux + "\n";
+            res = toStringInversoRecursivo(aux.siguiente) + " " + res;
         }
         return res;
     }
