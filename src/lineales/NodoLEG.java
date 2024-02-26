@@ -15,3 +15,4 @@ public class NodoLEG <E>{
     public E getDato(){return dato;}
 
 }
+

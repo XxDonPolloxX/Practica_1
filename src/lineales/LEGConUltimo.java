@@ -3,12 +3,15 @@ package lineales;
 import modelos.I_ListaConUltimo;
 
 public class LEGConUltimo<E> extends LEGGenerica<E> implements I_ListaConUltimo<E> {
-
+    protected LEGConUltimo<E> ultimo;
+    public LEGConUltimo(){
+        super();
+        ultimo = null;
+    }
     public void insertar(E x) {
         super.insertar(x);
     }
     public void insertarFinal(E elemento) {
-
 
     }
 
@@ -22,5 +25,18 @@ public class LEGConUltimo<E> extends LEGGenerica<E> implements I_ListaConUltimo<
 
     public E recuperar(int i) {
         return null;
+    }
+    public static String listadoDirectoIter(){
+        String res = "";
+
+        return res;
+    }
+
+    public static String listadoDirectoRec(){
+        String res = "";
+        for(NodoLEG<E> aux = primero; aux != null;){
+
+        }
+        return res;
     }
 }
