@@ -8,6 +8,8 @@ public class LEGConUltimo<E> extends LEGGenerica<E> implements I_ListaConUltimo<
         super();
         ultimo = null;
     }
+    public NodoLEG<E> getUltimo(){return ultimo;}
+    public NodoLEG<E> getPrimero(){return primero;}
     public void insertar(NodoLEG<E> x) {
         if(primero==null){
             primero = x;
@@ -57,9 +59,9 @@ public class LEGConUltimo<E> extends LEGGenerica<E> implements I_ListaConUltimo<
     }
     public String toStringRecursivo(NodoLEG<E> aux){
         String res="";
+        res = aux.dato.toString();
         if(!aux.equals(ultimo)){
-            res = aux.dato.toString();
-            res = res + toStringRecursivo(aux.siguiente) + "\n";
+            res = res + " " + toStringRecursivo(aux.siguiente) + "\n";
         }
         return res;
     }
@@ -68,7 +70,7 @@ public class LEGConUltimo<E> extends LEGGenerica<E> implements I_ListaConUltimo<
         String res="";
         if(!aux.equals(ultimo)){
             res = aux.dato.toString();
-            res =  toStringRecursivo(aux.siguiente) + res + "\n";
+            res =  toStringRecursivo(aux.siguiente) + " " + res + "\n";
         }
         return res;
     }

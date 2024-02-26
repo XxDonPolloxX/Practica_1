@@ -1,7 +1,10 @@
 public class E {
-    private int i;
+    private int numero;
     public E (int i){
-        this.i = i;
+        this.numero = i;
     }
-    public int getI(){return i;}
+    public int getNumero(){return numero;}
+    public String toString(){
+        return Integer.toString(numero);
+    }
 }
