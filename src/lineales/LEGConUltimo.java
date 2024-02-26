@@ -55,7 +55,7 @@ public class LEGConUltimo<E> extends LEGGenerica<E> implements I_ListaConUltimo<
     public String toStringIterativo() {
         String res = "";
         NodoLEG<E> aux = primero;
-        while (!aux.equals(ultimo)) {
+        while (aux != null) {
             res += aux.dato.toString() + "\n";
             aux = aux.siguiente;
         }
