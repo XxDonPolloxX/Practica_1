@@ -54,4 +54,10 @@ public class LEGGenerica <E>{
             }
         }
     }
+    public E recuperar(int i){
+        NodoLEG<E> aux;
+        int j;
+        for (aux = primero, j=0; j<i; aux=aux.siguiente, j++){;}
+        return aux.dato;
+    }
 }

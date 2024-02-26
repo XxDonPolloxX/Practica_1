@@ -4,10 +4,10 @@ import modelos.I_ListaConUltimo;
 
 public class LEGConUltimo<E> implements I_ListaConUltimo {
 
-    public void insertar(java.lang.Object x) {
+    public void insertar(E x) {
 
     }
-    public void insertarFinal(java.lang.Object elemento) {
+    public void insertarFinal(E elemento) {
 
     }
 
@@ -15,11 +15,11 @@ public class LEGConUltimo<E> implements I_ListaConUltimo {
         return null;
     }
 
-    public boolean eliminar(java.lang.Object elemento) {
+    public boolean eliminar(E elemento) {
         return false;
     }
 
-    public java.lang.Object recuperar(java.lang.Object elemento) {
+    public E recuperar(int i) {
         return null;
     }
 }
