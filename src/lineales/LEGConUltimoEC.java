@@ -19,7 +19,7 @@ public class LEGConUltimoEC<E extends Comparable<E>> extends LEGConUltimo<E> imp
         }
     }
     public void insertarCentinelas(){
-        if(ultimo.getDato().compareTo()){
+        if(ultimo.getDato()){
 
         }
     }
