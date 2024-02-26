@@ -7,23 +7,23 @@ public class LEGGenerica <E>{
         primero = null;
     }
 
-    public void insertar(E x){
-        NodoLEG<E> nuevo = new NodoLEG<>(x);
-        nuevo.siguiente = primero;
-        primero = nuevo;
+    public void insertar(NodoLEG<E> x){
+        x.siguiente = primero;
+        primero = x;
+
+
     }
 
-    public void insertarFinal(E x){
-        NodoLEG<E> nuevo = new NodoLEG<>(x);
+    public void insertarFinal(NodoLEG<E> x){
         NodoLEG<E> aux = primero;
         if(aux == null){
-            primero = nuevo;
+            primero = x;
         }
         else{
             while (aux.siguiente != null){
                 aux = aux.siguiente;
-                aux.siguiente = nuevo;
             }
+            aux.siguiente = x;
         }
     }
     public String toString(){
