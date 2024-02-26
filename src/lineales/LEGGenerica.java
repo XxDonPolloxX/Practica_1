@@ -26,7 +26,6 @@ public class LEGGenerica <E>{
             }
         }
     }
-
     public String toString(){
         String res = "";
         for (NodoLEG<E> aux = primero;null != aux; aux = aux.siguiente){
