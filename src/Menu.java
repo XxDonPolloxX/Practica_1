@@ -4,7 +4,7 @@ import lineales.*;
 public class Menu {
     protected static LEGConUltimo<E> leg;
     public Menu(){leg = null;}
-    public static void Menu() {
+    public static void ejecutar() {
             Scanner sc = new Scanner(System.in);
 
             int respuesta;
@@ -22,7 +22,7 @@ public class Menu {
                         break;
                     case 2:
                         System.out.println("\t--AÑADIR ELEMENTOS A LA LISTA--\n");
-                        anadirElementos(leg);
+                        anadirElementos();
                         System.out.println("\t-Presiona <intro> para continuar...-");
                         sc.nextLine();
                         break;
@@ -34,13 +34,13 @@ public class Menu {
                         break;
                     case 4:
                         System.out.println("\t--LISTADO DIRECTO DE ELEMENTOS(RECURSIVO)--\n");
-                        listadoInvertidoIter(leg);
+                        listadoDirectoRec(leg);
                         System.out.println("\t\t-Presiona <intro> para continuar...-");
                         sc.nextLine();
                         break;
                     case 5:
                         System.out.println("\t--LISTADO INVERTIDO DE ELEMENTOS(ITERATIVO)--\n");
-                        listadoDirectoRec(leg);
+                        listadoInvertidoIter(leg);
                         System.out.println("\t\t-Presiona <intro> para continuar...-");
                         sc.nextLine();
                         break;
@@ -62,33 +62,66 @@ public class Menu {
             leg = new LEGConUltimo<E>();
             return leg;
         }
-        public static void anadirElementos(LEGConUltimo <E> lista){
+        public static void anadirElementos(){
             Scanner sc = new Scanner(System.in);
             System.out.println("Introduce los elementos que quieres añadir(-1 para acabar):");
             int elemento = sc.nextInt();
-            if(elemento != -1){
-                NodoLEG<E> nodo = new NodoLEG<E>(new E(elemento));
-                lista.insertarFinal(nodo);
-            } else {
-                System.out.println("\t-La lista creada es la siguiente-");
-                listadoDirectoIter(lista);
+            while (elemento != -1){
+                if(elemento<-1){
+                    System.out.println("No se admiten valores negativos");
+                }
+                else{
+                    NodoLEG<E> nodo = new NodoLEG<E>(new E(elemento));
+                    leg.insertarFinal(nodo);
+                }
+                elemento = sc.nextInt();
             }
+                System.out.println("\t-La lista creada es la siguiente-");
+                listadoDirectoIter(leg);
+
         }
         public static void listadoDirectoIter(LEGConUltimo <E> lista){
-            System.out.println("\t\t\tElementos de la lista:");
-            lista.toStringIterativo();
+            if(leg.getPrimero() == null){
+                System.out.println("Lista vacía \n");
+            }
+            else{
+                System.out.println("\t\t\tElementos de la lista:");
+                System.out.println(lista.toStringIterativo());
+            }
+
+
         }
         public static void listadoInvertidoIter(LEGConUltimo <E> lista){
-            System.out.println("\t\t\tElementos de la lista:");
-            lista.toStringInversoIterativo();
+            if(leg.getPrimero() == null){
+                System.out.println("Lista vacía \n");
+            }
+            else{
+                System.out.println("\t\t\tElementos de la lista:");
+                System.out.println(lista.toStringInversoIterativo());
+            }
+
+
         }
         public static void listadoDirectoRec(LEGConUltimo <E> lista){
-            System.out.println("\t\t\tElementos de la lista:");
-            lista.toStringRecursivo(lista.getPrimero());
+            if(leg.getPrimero() == null){
+                System.out.println("Lista vacía \n");
+            }
+            else{
+                System.out.println("\t\t\tElementos de la lista:");
+                System.out.println(lista.toStringRecursivo(lista.getPrimero()));
+            }
+
+
         }
         public static void listadoInvertidoRec(LEGConUltimo <E> lista){
-            System.out.println("\t\t\tElementos de la lista:");
-            lista.toStringInversoRecursivo(lista.getPrimero());
+            if(leg.getPrimero() == null){
+                System.out.println("Lista vacía \n");
+            }
+            else{
+                System.out.println("\t\t\tElementos de la lista:");
+                System.out.println(lista.toStringInversoRecursivo(lista.getPrimero()));
+            }
+
         }
 
 }
