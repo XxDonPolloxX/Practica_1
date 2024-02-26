@@ -41,12 +41,18 @@ public class LEGConUltimo<E> extends LEGGenerica<E> implements I_ListaConUltimo<
     public String toStringRecursivo(NodoLEG<E> aux){
         String res="";
         if(!aux.equals(ultimo)){
+            res = aux.dato.toString();
             res = res + toStringRecursivo(aux.siguiente) + "\n";
         }
         return res;
     }
 
-    public String toStringInversoRecursivo(NodoLEG<E> aux, NodoLEG<E> ant){
-            
+    public String toStringInversoRecursivo(NodoLEG<E> aux){
+        String res="";
+        if(!aux.equals(ultimo)){
+            res = aux.dato.toString();
+            res =  toStringRecursivo(aux.siguiente) + res + "\n";
+        }
+        return res;
     }
 }
