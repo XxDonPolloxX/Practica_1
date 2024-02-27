@@ -19,7 +19,16 @@ public class LEGConUltimoEC<E extends Comparable<E>> extends LEGConUltimo<E> imp
         }
     }
     public void insertarCentinelas(){
-        if(ultimo.getDato()){
+        if(ultimo.getDato() /* ES PAR */){
+
+            for(NodoLEG<E> aux = primero; aux = ultimo; aux=aux.siguiente){
+                if(aux.getDato() /* ES PAR */){
+                    //CREAR NODO CON DATOS = -12
+                    NodoLEG<E> centinela;
+                    centinela.siguiente = aux.siguiente;
+                    aux.siguiente = centinela;
+                }
+            }
 
         }
     }
