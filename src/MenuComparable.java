@@ -1,4 +1,5 @@
 import lineales.E;
+import lineales.FalloEnOperacion;
 import lineales.LEGConUltimo;
 import lineales.LEGConUltimoEC;
 
@@ -7,7 +8,7 @@ import java.util.Scanner;
 public class MenuComparable extends Menu{
     protected static LEGConUltimoEC<E> leg;
     public MenuComparable(){leg = null;}
-    public static void ejecutar() {
+    public static void ejecutar() throws FalloEnOperacion {
         Scanner sc = new Scanner(System.in);
 
         int respuesta;
@@ -36,18 +37,26 @@ public class MenuComparable extends Menu{
                     sc.nextLine();
                     break;
                 case 4:
-                    System.out.println("\t--LISTADO DIRECTO DE ELEMENTOS(RECURSIVO)--\n");
-                    listadoDirectoRec(leg);
+                    System.out.println("\t--MOVER CABEZA DE LISTA A LA COLA DE LA LISTA--\n");
+                    System.out.println("Lista original:");
+                    listadoDirectoIter(leg);
+                    System.out.println("Lista modificada:");
+                    leg.moverCabeza();
+                    listadoDirectoIter(leg);
                     System.out.println("\t\t-Presiona <intro> para continuar...-");
                     sc.nextLine();
                     break;
                 case 5:
-                    System.out.println("\t--LISTADO INVERTIDO DE ELEMENTOS(ITERATIVO)--\n");
-                    listadoInvertidoIter(leg);
+                    System.out.println("\t--INSERTAR CENTINELAS--\n");
+                    System.out.println("Lista original:");
+                    listadoDirectoIter(leg);
+                    leg.insertarCentinelas();
+                    System.out.println("Lista modificada:");
+                    listadoDirectoIter(leg);
                     System.out.println("\t\t-Presiona <intro> para continuar...-");
                     sc.nextLine();
                     break;
-                
+
                 case 0:
                     System.out.println("\t--SALIENDO DEL PROGRAMA--\n");
                     break;
