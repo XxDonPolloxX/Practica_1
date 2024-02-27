@@ -14,10 +14,7 @@ public class LEGConUltimoEC<E extends Comparable<E>> extends LEGConUltimo<E> imp
             System.out.println("Lista vacía");
         }
         else{
-            NodoLEG<E> aux = primero;
-            NodoLEG<E> ant = null;
-            NodoLEG<E> min = primero;
-            NodoLEG<E> antMin = null;
+            NodoLEG<E> aux = primero, ant = null,min = primero,antMin = null;
             while(aux != null){
                 if(aux.getDato().compareTo(min.getDato())<0){
                     min = aux;
@@ -52,7 +49,6 @@ public class LEGConUltimoEC<E extends Comparable<E>> extends LEGConUltimo<E> imp
     }
     public void insertarCentinelas(){
         if(ultimo.getDato() /* ES PAR */){
-
             for(NodoLEG<E> aux = primero; aux = ultimo; aux=aux.siguiente){
                 if(aux.getDato() /* ES PAR */){
                     //CREAR NODO CON DATOS = -12

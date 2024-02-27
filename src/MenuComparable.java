@@ -31,8 +31,8 @@ public class MenuComparable extends Menu{
                     sc.nextLine();
                     break;
                 case 3:
-                    System.out.println("\t--LISTADO DIRECTO DE ELEMENTOS(ITERATIVO)--\n");
-                    listadoDirectoIter(leg);
+                    System.out.println("\t--BORRAR EL MINIMO--\n");
+                    borrarMinimo();
                     System.out.println("\t\t-Presiona <intro> para continuar...-");
                     sc.nextLine();
                     break;
@@ -68,5 +68,13 @@ public class MenuComparable extends Menu{
     public static LEGConUltimoEC<E> crearLista(){
         leg = new LEGConUltimoEC<E>();
         return leg;
+    }
+    public static void borrarMinimo(){
+        System.out.println("\tBORRAR EL ELEMENTO MAS PEQUEÑO DE LA LISTA");
+        System.out.println("\t\tLista Original:");
+        System.out.print(leg.toStringIterativo());
+        leg.borrarMinimo();
+        System.out.println("\t\tLista Modificada:");
+        System.out.print(leg.toStringIterativo());
     }
 }
