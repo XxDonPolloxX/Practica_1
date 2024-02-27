@@ -2,7 +2,7 @@ import java.util.Scanner;
 import lineales.*;
 
 public class Menu {
-    protected static LEGConUltimo<E> leg;
+    protected static LEGConUltimo<Integer> leg;
     public Menu(){leg = null;}
     public static void ejecutar() throws FalloEnOperacion {
             Scanner sc = new Scanner(System.in);
@@ -59,7 +59,7 @@ public class Menu {
             }while (respuesta != 0);
         }
         public static LEGConUltimo crearLista(){
-            leg = new LEGConUltimo<E>();
+            leg = new LEGConUltimo<Integer>();
             return leg;
         }
         public static void anadirElementos(){
@@ -71,7 +71,7 @@ public class Menu {
                     System.out.println("No se admiten valores negativos");
                 }
                 else{
-                    NodoLEG<E> nodo = new NodoLEG<E>(new E(elemento));
+                    NodoLEG<Integer> nodo = new NodoLEG<Integer>( new Integer(elemento));
                     leg.insertarFinal(nodo);
                 }
                 elemento = sc.nextInt();
@@ -80,7 +80,7 @@ public class Menu {
                 listadoDirectoIter(leg);
 
         }
-        public static void listadoDirectoIter(LEGConUltimo <E> lista){
+        public static void listadoDirectoIter(LEGConUltimo <Integer> lista){
             if(leg.getPrimero() == null){
                 System.out.println("Lista vacía \n");
             }
@@ -91,7 +91,7 @@ public class Menu {
 
 
         }
-        public static void listadoInvertidoIter(LEGConUltimo <E> lista){
+        public static void listadoInvertidoIter(LEGConUltimo <Integer> lista){
             if(leg.getPrimero() == null){
                 System.out.println("Lista vacía \n");
             }
@@ -102,7 +102,7 @@ public class Menu {
 
 
         }
-        public static void listadoDirectoRec(LEGConUltimo <E> lista){
+        public static void listadoDirectoRec(LEGConUltimo <Integer> lista){
             if(leg.getPrimero() == null){
                 System.out.println("Lista vacía \n");
             }
@@ -113,7 +113,7 @@ public class Menu {
 
 
         }
-        public static void listadoInvertidoRec(LEGConUltimo <E> lista){
+        public static void listadoInvertidoRec(LEGConUltimo <Integer> lista){
             if(leg.getPrimero() == null){
                 System.out.println("Lista vacía \n");
             }

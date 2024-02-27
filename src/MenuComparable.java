@@ -1,12 +1,10 @@
-import lineales.E;
 import lineales.FalloEnOperacion;
-import lineales.LEGConUltimo;
 import lineales.LEGConUltimoEC;
 
 import java.util.Scanner;
 
 public class MenuComparable extends Menu{
-    protected static LEGConUltimoEC<E> leg;
+    protected static LEGConUltimoEC<Integer> leg;
     public MenuComparable(){leg = null;}
     public static void ejecutar() throws FalloEnOperacion {
         Scanner sc = new Scanner(System.in);
@@ -65,8 +63,8 @@ public class MenuComparable extends Menu{
             }
         }while (respuesta != 0);
     }
-    public static LEGConUltimoEC<E> crearLista(){
-        leg = new LEGConUltimoEC<E>();
+    public static LEGConUltimoEC<Integer> crearLista(){
+        leg = new LEGConUltimoEC<Integer>();
         return leg;
     }
     public static void borrarMinimo(){
