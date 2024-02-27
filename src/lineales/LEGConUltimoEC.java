@@ -49,10 +49,10 @@ public class LEGConUltimoEC<E extends Comparable<E>> extends LEGConUltimo<E> imp
     }
     public void insertarCentinelas(){
         if(ultimo.getDato() /* ES PAR */){
-            for(NodoLEG<E> aux = primero; aux = ultimo; aux=aux.siguiente){
+            for(NodoLEG<E> aux = primero; aux == ultimo; aux=aux.siguiente){
                 if(aux.getDato() /* ES PAR */){
                     //CREAR NODO CON DATOS = -12
-                    NodoLEG<E> centinela;
+                    NodoLEG<E> centinela = new NodoLEG<>(new E(-12));
                     centinela.siguiente = aux.siguiente;
                     aux.siguiente = centinela;
                 }

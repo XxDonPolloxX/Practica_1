@@ -1,6 +1,6 @@
 package lineales;
 
-public class E implements Comparable<E> {
+public class E extends Comparable<> {
     private int numero;
     public E(int i){
         this.numero = i;
@@ -13,4 +13,7 @@ public class E implements Comparable<E> {
         return this.numero - elemento.getNumero();
     }
     public int getNumero(){return numero;}
+
+
+
 }

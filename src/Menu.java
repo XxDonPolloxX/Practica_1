@@ -108,7 +108,7 @@ public class Menu {
             }
             else{
                 System.out.println("\t\t\tElementos de la lista:");
-                System.out.println(lista.toStringRecursivo(lista.getPrimero()));
+                System.out.println(lista.toStringRecursivo());
             }
 
 
@@ -119,7 +119,7 @@ public class Menu {
             }
             else{
                 System.out.println("\t\t\tElementos de la lista:");
-                System.out.println(lista.toStringInversoRecursivo(lista.getPrimero()));
+                System.out.println(lista.toStringInversoRecursivo());
             }
 
         }
