@@ -4,7 +4,7 @@ import lineales.*;
 public class Menu {
     protected static LEGConUltimo<E> leg;
     public Menu(){leg = null;}
-    public static void ejecutar() {
+    public static void ejecutar() throws FalloEnOperacion {
             Scanner sc = new Scanner(System.in);
 
             int respuesta;

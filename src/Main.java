@@ -1,3 +1,4 @@
+import lineales.FalloEnOperacion;
 import lineales.LEGConUltimo;
 import lineales.NodoLEG;
 
@@ -6,7 +7,11 @@ import lineales.NodoLEG;
 public class Main {
     public static void main(String[] args) {
         Menu menu = new Menu();
-        menu.ejecutar();
+        try {
+            menu.ejecutar();
+        } catch (FalloEnOperacion e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
