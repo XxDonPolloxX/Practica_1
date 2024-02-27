@@ -31,7 +31,7 @@ public class MenuComparable extends Menu{
                     sc.nextLine();
                     break;
                 case 3:
-                    System.out.println("\t--BORRAR EL MINIMO--\n");
+                    System.out.println("\t--BORRAR EL ELEMENTO MAS PEQUEÑO DE LA LISTA--\n");
                     borrarMinimo();
                     System.out.println("\t\t-Presiona <intro> para continuar...-");
                     sc.nextLine();
@@ -70,7 +70,6 @@ public class MenuComparable extends Menu{
         return leg;
     }
     public static void borrarMinimo(){
-        System.out.println("\tBORRAR EL ELEMENTO MAS PEQUEÑO DE LA LISTA");
         System.out.println("\t\tLista Original:");
         System.out.print(leg.toStringIterativo());
         leg.borrarMinimo();
