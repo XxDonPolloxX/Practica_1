@@ -6,7 +6,7 @@ import modelos.I_ListaConUltimoEC;
 import java.awt.*;
 
 
-public class LEGConUltimoEC<E extends Comparable<E>> extends LEGConUltimo<E> implements I_ListaConUltimoEC<E> {
+public class LEGConUltimoEC<E extends Number> extends LEGConUltimo<E> implements I_ListaConUltimoEC<E> {
     public LEGConUltimoEC() {
         super();
     }
@@ -18,7 +18,7 @@ public class LEGConUltimoEC<E extends Comparable<E>> extends LEGConUltimo<E> imp
         else {
             NodoLEG<E> aux = primero, ant = null, min = primero, antMin = null;
             while (aux != null) {
-                if (aux.getDato().compareTo(min.getDato()) < 0) {
+                if ((int)aux.getDato() < (int)min.getDato()) {
                     min = aux;
                     antMin = ant;
                 }
@@ -39,7 +39,7 @@ public class LEGConUltimoEC<E extends Comparable<E>> extends LEGConUltimo<E> imp
 
     public void moverCabeza() throws FalloEnOperacion {
         NodoLEG<E> aux;
-        if (primero.getDato().compareTo(ultimo.getDato()) < 0) {
+        if ((int)primero.getDato() < (int)ultimo.getDato()) {
             aux = primero.siguiente;
             ultimo.siguiente = primero;
             ultimo = primero;
@@ -50,9 +50,9 @@ public class LEGConUltimoEC<E extends Comparable<E>> extends LEGConUltimo<E> imp
     }
 
     public void insertarCentinelas() {
-        if (ultimo.getDato() % 2 == 0/* ES PAR */) {
+        if ((int)ultimo.getDato() % 2 == 0/* ES PAR */) {
             for (NodoLEG<E> aux = primero; aux == ultimo; aux = aux.siguiente) {
-                if (aux.getDato() % 2 == 0 /* ES PAR */) {
+                if ((int)aux.getDato() % 2 == 0 /* ES PAR */) {
                     //CREAR NODO CON DATOS = -12
                     NodoLEG<E> centinela = new NodoLEG<E>(-12);
                     centinela.siguiente = aux.siguiente;
