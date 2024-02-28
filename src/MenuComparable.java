@@ -38,11 +38,7 @@ public class MenuComparable extends Menu{
                     break;
                 case 4:
                     System.out.println("\t--MOVER CABEZA DE LISTA A LA COLA DE LA LISTA--\n");
-                    System.out.println("Lista original:");
-                    listadoDirectoIter(leg);
-                    System.out.println("Lista modificada:");
-                    leg.moverCabeza();
-                    listadoDirectoIter(leg);
+                    moverCabeza();
                     System.out.println("\t\t-Presiona <intro> para continuar...-");
                     sc.nextLine();
                     break;
@@ -73,6 +69,17 @@ public class MenuComparable extends Menu{
         System.out.println("\t\tLista Original:");
         System.out.print(leg.toStringIterativo());
         leg.borrarMinimo();
+        System.out.println("\t\tLista Modificada:");
+        System.out.print(leg.toStringIterativo());
+    }
+    public static void moverCabeza(){
+        System.out.println("\t\tLista Original:");
+        System.out.print(leg.toStringIterativo());
+        try {
+            leg.moverCabeza();
+        } catch (FalloEnOperacion falloEnOperacion) {
+            falloEnOperacion.printStackTrace();
+        }
         System.out.println("\t\tLista Modificada:");
         System.out.print(leg.toStringIterativo());
     }
