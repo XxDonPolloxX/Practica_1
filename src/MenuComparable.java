@@ -101,5 +101,5 @@ public class MenuComparable extends Menu{
             System.out.println("\t\t\tElementos de la lista:");
             System.out.println(lista.toStringIterativo());
         }
-    }//duro
+    }//duroas
 }
