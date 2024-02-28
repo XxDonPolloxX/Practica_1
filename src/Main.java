@@ -6,7 +6,7 @@ import lineales.NodoLEG;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Menu menu = new Menu();
+        MenuComparable menu = new MenuComparable();
         try {
             menu.ejecutar();
         } catch (FalloEnOperacion e) {

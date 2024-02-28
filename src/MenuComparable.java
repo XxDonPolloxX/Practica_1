@@ -1,5 +1,7 @@
 import lineales.FalloEnOperacion;
+import lineales.LEGConUltimo;
 import lineales.LEGConUltimoEC;
+import lineales.NodoLEG;
 
 import java.util.Scanner;
 
@@ -74,4 +76,31 @@ public class MenuComparable extends Menu{
         System.out.println("\t\tLista Modificada:");
         System.out.print(leg.toStringIterativo());
     }
+    public static void anadirElementos(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce los elementos que quieres añadir(-1 para acabar):");
+        int elemento = sc.nextInt();
+        while (elemento != -1){
+            if(elemento<-1){
+                System.out.println("No se admiten valores negativos");
+            }
+            else{
+                NodoLEG<Integer> nodo = new NodoLEG(elemento);
+                leg.insertarFinal(nodo);
+            }
+            elemento = sc.nextInt();
+        }
+        System.out.println("\t-La lista creada es la siguiente-");
+        listadoDirectoIter(leg);
+    }
+    public static void listadoDirectoIter(LEGConUltimo <Integer> lista){
+        if(leg.getPrimero() == null){
+            System.out.println("Lista vacía \n");
+        }
+        else{
+            System.out.println("\t\t\tElementos de la lista:");
+            System.out.println(lista.toStringIterativo());
+        }
+    }
+
 }

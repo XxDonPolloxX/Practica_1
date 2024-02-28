@@ -71,14 +71,13 @@ public class Menu {
                     System.out.println("No se admiten valores negativos");
                 }
                 else{
-                    NodoLEG<Integer> nodo = new NodoLEG<Integer>( new Integer(elemento));
+                    NodoLEG<Integer> nodo = new NodoLEG(elemento);
                     leg.insertarFinal(nodo);
                 }
                 elemento = sc.nextInt();
             }
                 System.out.println("\t-La lista creada es la siguiente-");
                 listadoDirectoIter(leg);
-
         }
         public static void listadoDirectoIter(LEGConUltimo <Integer> lista){
             if(leg.getPrimero() == null){

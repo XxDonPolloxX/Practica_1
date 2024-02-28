@@ -20,20 +20,10 @@ public class LEGConUltimoEC<E extends Number> extends LEGConUltimo<E> implements
             while (aux != null) {
                 if ((int)aux.getDato() < (int)min.getDato()) {
                     min = aux;
-                    antMin = ant;
                 }
-                ant = aux;
                 aux = aux.siguiente;
             }
-            if (min == primero) {
-                primero = primero.siguiente;
-            }
-            else {
-                antMin.siguiente = min.siguiente;
-            }
-            if (min == ultimo) {
-                ultimo = antMin;
-            }
+            eliminar(min.getDato());
         }
     }
 
