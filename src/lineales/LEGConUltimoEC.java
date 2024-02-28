@@ -50,11 +50,11 @@ public class LEGConUltimoEC<E extends Number> extends LEGConUltimo<E> implements
     }
 
     public void insertarCentinelas() {
-        if ((int)ultimo.getDato() % 2 == 0/* ES PAR */) {
+        if ((int)ultimo.getDato() % 2 == 0) {
             for (NodoLEG<E> aux = primero; aux == ultimo; aux = aux.siguiente) {
-                if ((int)aux.getDato() % 2 == 0 /* ES PAR */) {
+                if ((int)aux.getDato() % 2 == 0) {
                     //CREAR NODO CON DATOS = -12
-                    NodoLEG<E> centinela = new NodoLEG<E>(-12);
+                    NodoLEG<E> centinela = new NodoLEG<E>((E) new Integer(-12));
                     centinela.siguiente = aux.siguiente;
                     aux.siguiente = centinela;
                 }
