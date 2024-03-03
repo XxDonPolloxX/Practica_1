@@ -23,7 +23,9 @@ public class LEGConUltimoEC<E extends Number> extends LEGConUltimo<E> implements
                 }
                 aux = aux.siguiente;
             }
-            eliminar(min.getDato());
+            if(!eliminar(min.getDato())){
+                System.out.println("Elemento no borrado");
+            }
         }
     }
 
