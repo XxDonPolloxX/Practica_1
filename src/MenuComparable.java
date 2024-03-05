@@ -15,7 +15,7 @@ public class MenuComparable extends Menu{
         do {
             System.out.println("\t MENÚ LEGConUltimo con elementos comparables");
             System.out.println("===================================================================");
-            System.out.println("1. Crear lista de elementos enteros\n2. Añadir elementos a la lista\n3. Borrar elemento mínimo\n4. Mover cabeza de lista a la cola de la lista\n5. Insertar nodos centinela\n0. Salir \n Elige que opcion quieres ejecutar: ");
+            System.out.println("1. Crear lista de elementos enteros\n2. Añadir elementos a la lista\n3. Borrar elemento mínimo\n4. Mover cabeza de lista a la cola de la lista\n5. Insertar nodos centinela\n6. Insertar nodos centinela recursivo\n0. Salir \n Elige que opcion quieres ejecutar: ");
             respuesta = sc.nextInt();
             switch (respuesta) {
                 case 1:
@@ -47,6 +47,16 @@ public class MenuComparable extends Menu{
                     System.out.println("Lista original:");
                     listadoDirectoIter(leg);
                     leg.insertarCentinelas();
+                    System.out.println("Lista modificada:");
+                    listadoDirectoIter(leg);
+                    System.out.println("\t\t-Presiona <intro> para continuar...-");
+                    sc.nextLine();
+                    break;
+                case 6:
+                    System.out.println("\t--INSERTAR CENTINELAS RECURSIVO--\n");
+                    System.out.println("Lista original:");
+                    listadoDirectoIter(leg);
+                    leg.insertarCentinelasSinUltimo(leg.getPrimero());
                     System.out.println("Lista modificada:");
                     listadoDirectoIter(leg);
                     System.out.println("\t\t-Presiona <intro> para continuar...-");

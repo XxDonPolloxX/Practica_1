@@ -65,7 +65,7 @@ public class LEGConUltimoEC<E extends Number> extends LEGConUltimo<E> implements
     public boolean insertarCentinelasSinUltimo(NodoLEG<E> aux){
 
         if(aux.siguiente==null){
-            if((int)aux.getDato()%2==0){
+            if((int)aux.getDato()%2==0 && (int)aux.getDato()>=0){
                 NodoLEG<E> centinela = new NodoLEG<E>((E) new Integer(-12));
                 aux.siguiente=centinela;
                 ultimo = centinela;
@@ -77,7 +77,7 @@ public class LEGConUltimoEC<E extends Number> extends LEGConUltimo<E> implements
         }
         else{
             if(insertarCentinelasSinUltimo(aux.siguiente)){
-                if((int)aux.getDato()%2==0){
+                if((int)aux.getDato()%2==0 && (int)aux.getDato()>=0 && (int)aux.siguiente.getDato()>=0){
                     NodoLEG<E> centinela = new NodoLEG<E>((E) new Integer(-12));
                     centinela.siguiente=aux.siguiente;
                     aux.siguiente=centinela;
