@@ -62,7 +62,33 @@ public class LEGConUltimoEC<E extends Number> extends LEGConUltimo<E> implements
 
         }
     }
-    public boolean insertarCentinelasSinUltimo(){
+    public boolean insertarCentinelasSinUltimo(NodoLEG<E> aux){
+
+        if(aux.siguiente==null){
+            if((int)aux.getDato()%2==0){
+                NodoLEG<E> centinela = new NodoLEG<E>((E) new Integer(-12));
+                aux.siguiente=centinela;
+                ultimo = centinela;
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            if(insertarCentinelasSinUltimo(aux.siguiente)){
+                if((int)aux.getDato()%2==0){
+                    NodoLEG<E> centinela = new NodoLEG<E>((E) new Integer(-12));
+                    centinela.siguiente=aux.siguiente;
+                    aux.siguiente=centinela;
+                }
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
         //usar recursividad, se llega hasta el final, si el ultimo es par devuelve true y va insertando, es poner una condicion mas
         //al if de insertar centinelas normal
     }
