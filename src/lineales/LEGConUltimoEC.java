@@ -89,8 +89,6 @@ public class LEGConUltimoEC<E extends Number> extends LEGConUltimo<E> implements
             }
         }
 
-        //usar recursividad, se llega hasta el final, si el ultimo es par devuelve true y va insertando, es poner una condicion mas
-        //al if de insertar centinelas normal
     }
 
 }
